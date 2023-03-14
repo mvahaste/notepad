@@ -6,4 +6,4 @@ Made this because sometimes I want to write down some notes in the Steam overlay
 - Local storage auto save & load
 - Dark & light theme support
 - Font resizing
-- A decent font
+- A decent font (JetBrains Mono)
