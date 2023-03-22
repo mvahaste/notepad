@@ -5,5 +5,8 @@ Made this because sometimes I want to write down some notes in the Steam overlay
 #### Features
 - Local storage auto save & load
 - Dark & light theme support
-- Font resizing
-- A decent font (JetBrains Mono)
+- Editor width toggle
+- Font
+   - Resizing
+   - Custom font option
+   - A decent default font (JetBrains Mono)
