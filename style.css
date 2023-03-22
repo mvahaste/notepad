@@ -9,10 +9,12 @@
 	--active: #cecece;
 
 	--font-size: 14px;
+
+	--font: "JetBrains Mono";
 }
 
 * {
-	font-family: "JetBrains Mono", monospace;
+	font-family: var(--font);
 	margin: 0;
 	padding: 0;
 	transition: all ease 0.1s;
@@ -35,6 +37,60 @@ body {
 	--active: #535353;
 }
 
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.25);
+	z-index: 2;
+	color: var(--fg);
+	backdrop-filter: blur(4px);
+}
+
+.overlay > div {
+	padding: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 10px;
+	/* Center content */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+
+.overlay button {
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	color: var(--fg);
+	font-size: var(--font-size);
+}
+
+.overlay .row {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: 10px;
+}
+
+input {
+	outline: none;
+	border: none;
+	padding: 10px;
+	width: 100%;
+	background-color: var(--bg2);
+	color: var(--fg);
+	font-size: var(--font-size);
+	border-radius: 10px;
+}
+
 svg {
 	width: 20px;
 	height: 20px;
@@ -46,7 +102,7 @@ svg {
 textarea {
 	outline: none;
 	border: none;
-	padding: 20px 25px;
+	padding: 20px;
 
 	width: 100vw;
 	height: 100vh;
@@ -58,6 +114,13 @@ textarea {
 	font-size: var(--font-size);
 }
 
+.thinner {
+	/* align center */
+	width: 40vw;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 .options {
 	position: absolute;
 	top: 10px;
@@ -67,6 +130,12 @@ textarea {
 	border-radius: 10px;
 	gap: 7px;
 	z-index: 1;
+	transform: translateX(188px);
+	transition: all ease 0.2s;
+}
+
+.expanded {
+	transform: translateX(0px);
 }
 
 button {
@@ -75,6 +144,7 @@ button {
 	border-radius: 5px;
 	padding: 5px;
 	background-color: var(--bg2);
+	text-align: center;
 }
 
 button:hover {
@@ -86,6 +156,20 @@ button:active {
 	background-color: var(--active);
 }
 
+#width svg {
+	transform: rotate(90deg);
+}
+
 .hidden {
 	display: none;
+}
+
+.flipped {
+	transform: rotate(180deg);
+}
+
+@media screen and (max-width: 700px) {
+	.thinner {
+		width: 75vw;
+	}
 }
